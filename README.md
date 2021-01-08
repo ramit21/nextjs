@@ -45,7 +45,7 @@ http://localhost:3000/mytsx
 See the response of the api in json format as returned by the api (and not JSX returned by react components)
 http://localhost:3000/api/hello
 
-Hit the api with below request via browser's console, and see request object in the server logs as per the console.log in the code:
+Hit the api with browser provided fetch on the console, and see request object in the server logs as per the console.log of code:
 
 fetch('http://localhost:3000/api/hello', { 
     method: 'POST',
