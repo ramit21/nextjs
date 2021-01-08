@@ -1,4 +1,5 @@
 # nextjs
+
 POC - next js basics
 
 Nextjs is a wrapper around reactjs that enables react code to be rendered on server.
@@ -28,7 +29,11 @@ Public folder files are rendered as is. They are not evaluated for typescript co
 
 Pages folder contains .ts files (APIs) and .tsx files (react components that return JSX based HTMLs). 
 
-Each folder inside the above 2 folders serve as url path of the application. index.tsx serves as the page for the route as per the folder structure. See urls below:
+Each folder inside the above 2 folders serve as url path of the application. index.tsx serves as the default page for the route as per the folder structure. 
+
+Pages/api is a special folder that contains typescript apis that should not return react components. See api/hello.ts for api code, how we retrieve request body, cookies etc, and how we return a response with correct status code.
+
+For above conepts, see urls below:
 
 ```
 See index.tsx render the default domain:
@@ -37,8 +42,22 @@ http://localhost:3000
 See tsx file resolve to a path:
 http://localhost:3000/mytsx
 
-See the response of the api in json format as returned by the api (and not JSX rendered html)
+See the response of the api in json format as returned by the api (and not JSX returned by react components)
 http://localhost:3000/api/hello
+
+Hit the api with below request via browser's console, and see request object in the server logs as per the console.log in the code:
+
+fetch('http://localhost:3000/api/hello', { 
+    method: 'POST',
+    headers: {
+        'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify({
+        username: 'admin',
+        password: 'password'
+    })
+})
+
 
 ```
 
