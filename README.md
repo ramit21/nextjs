@@ -46,12 +46,15 @@ Each folder inside the above 2 folders serve as url path of the application. ind
 
 You can make custom 404 error page using a custom react component named 404.tsx
 
-**GetStaticProps, revalidate parameter, GetStaticPaths**
+**GetStaticProps, revalidate parameter, GetStaticPaths, GetServerSideProps**
 
 GetStaticProps method is invoked on the server before the JSX gets rendered. Good place to call API, DB or file read operations. Basically at build time, the html generated at the server side is cached on the disk, so that subsequent calls to the page can be rendered from the cache. In case you want to re-create the page every X seconds, then use the revalidate parameter. Nextjs will then try (not 100%) to recreate the page after X seconds.
 
-With dynamic pages, GetStaticProps should be used with GetStaticPaths functions, which tells what all param values are allowed for the slugs. This is important otherwise dynamic url hits would create lot of objects in the cache. For this, the fallback parameter should be set to false. If it is set to true, then the slug can have any value.
+With dynamic pages, GetStaticProps should be used with GetStaticPaths functions, which tells what all param values are allowed for the slugs. This is important otherwise dynamic url hits would create lot of objects in the cache. For this, the fallback parameter should be set to false. If it is set to true, then all values are allowed in the url for the paramter. Once the props have been populated and are available in the JSX rendering function, this paramter is set to false. You can use router's isFallback method to show loading etc. till props are avaialble to be populated in the JSX render method, else JSX will show up without the prop values till they are actually available. Once populated, subsequent url hits will not show this loading as page will be picked up from cache (while running on local (dev) however, cache is disabled, and a new page will be created on every request)
 
+Unlike GetStaticProps, GetServerProps method will always be called (no cache), even on production. Use of latter is discouraged.
+
+------------
 
 For above conepts, see urls below:
 
@@ -87,8 +90,9 @@ Nested Route being served from the base index.tsx of its corresponding folder:
 http://localhost:3000/fruit
 
 Dynamic slugs:
-Only abc and def are allowed values. Set fallback parameter as true to allow all param values:  
+If fallback paramter is set to false, the only /abc and /def will be allowed in url:
 http://localhost:3000/fruit/abc
+
 http://localhost:3000/fruit/abc/xyz -> uses router to display param values
 
 Unmatched dynamic slug being handled by a catch-all react component:

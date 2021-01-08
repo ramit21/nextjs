@@ -1,5 +1,6 @@
 
 import {GetStaticProps, GetStaticPaths} from 'next'
+import { useRouter } from 'next/router'
 
 //executed on the server
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -20,15 +21,20 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
     {
       params: {param1: 'def'}
     }],
-    fallback: false  //set this to true to allow all values
+    fallback: true  //set this to false to only allow above values.
   }
 }
 
 export default function slug1(props) {
-    return (
+  const router = useRouter();
+
+  if(router.isFallback){ //useful when fallback: true
+    return <h1>Loading ...</h1>
+  }
+  return (
       <div>
          <h1>Fruit route's index.tsx</h1>
          <h3>Dynamic number generated via GetStaticProps method = {props.val}</h3>
       </div>
     )
-  }
+}
