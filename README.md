@@ -65,5 +65,7 @@ fetch('http://localhost:3000/api/hello', {
 
 **_app.tsx**: This file is responsible for rendering all of your pages. The code here gets executed on both server and client side. In contrast, the code in document.tsx executes only at server side as this file is supposed to render only the root document. (See both file's console.log at server as well as in the browser)
 
+**Routing**: Nextjs provides Link component to implement SPA routing. If you use traditional anchor tag with href instead, then it won't work as SPA and page will be reloaded everytime link is clicked. See index.tsx on how we wrap the anchor tag with Link tag. 
+
 
 
