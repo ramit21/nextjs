@@ -29,7 +29,7 @@ Public folder files are rendered as is. They are not evaluated for typescript co
 
 Pages folder contains .ts files (APIs) and .tsx files (react components that return JSX based HTMLs). 
 
-Each folder inside the above 2 folders serve as url path of the application. index.tsx serves as the default page for the route as per the folder structure. 
+Each folder inside the above 2 folders serve as url path of the application. index.tsx serves as the default page for the route as per the folder structure (You can have different folders representing different routes, and each of these routes can have their index.tsx for the default page) 
 
 Pages/api is a special folder that contains typescript apis that should not return react components. See api/hello.ts for api code, how we retrieve request body, cookies etc, and how we return a response with correct status code.
 
