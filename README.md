@@ -44,7 +44,7 @@ http://localhost:3000/api/hello
 
 **_document.tsx**: By default, nextjs adds html content around the jsx being returned from our pages. To modify this page (eg. add custom <head> elements), create the optional _document.tsx file under pages folder(see code in the poc). Once created, this file will modify every html being rendered by nextjs. Note that in this file, we return a class based component (not functional component as with other tsx files) as we need to extends our original Document and more functionality to it. Open any html being returned in this project, and see our custom property present in the Head.
 
-**_app.tsx**: This file is responsible for rendering all of your pages. The code here gets rendered on both server and client side. In contrast, the code in document.tsx executes only at server side as this file is supposed to render only the root document. (See both file's console.log at server as well as in the browser)
+**_app.tsx**: This file is responsible for rendering all of your pages. The code here gets executed on both server and client side. In contrast, the code in document.tsx executes only at server side as this file is supposed to render only the root document. (See both file's console.log at server as well as in the browser)
 
 
 
