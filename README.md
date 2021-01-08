@@ -39,7 +39,9 @@ Each folder inside the above 2 folders serve as url path of the application. ind
 
 **Routing**: Nextjs provides Link component to give SPA like routing experience. If you use traditional anchor tag with href instead, then page will be reloaded everytime link is clicked. See index.tsx on how we wrap the anchor tag with Link tag. 
 
-**Dynamic Routing**: Create folders and/or file names starting and ending with square brackets. These are called slugs. You can also create multi-level slugs using dynamic folder that further contains dynamic file inside it. See fruits/[param1]/[param2] in the POC. Nextjs provides Router component which can be used to fetch the values of the slugs being passed in.
+**Dynamic Routing**: Create folders and/or file names starting and ending with square brackets. These are called slugs. You can also create multi-level slugs using dynamic folder that further contains dynamic file inside it. See fruits/[param1]/[param2] in the POC. Nextjs provides Router component which can be used to fetch the values of the slugs being passed in. You can also define a catch-all slug to catch url hits that don't match other slugs.
+
+You can make custom 404 error page using a custom react component named 404.tsx
 
 For above conepts, see urls below:
 
@@ -72,5 +74,14 @@ http://localhost:3000/fruit
 Dynamic routes with multi level params (abc and xyz can be any values):
 http://localhost:3000/fruit/abc
 http://localhost:3000/fruit/abc/xyz 
+
+Unmatched dynamic slug being handled by a catch-all react component:
+http://localhost:3000/fruit/abc/xyz/x
+
+404 being rendered by our custom page:
+http://localhost:3000/blah
+
+
+
 ```
 
