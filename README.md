@@ -17,7 +17,10 @@ npx create-next-app <name>
 ```
 npm i typescript @types/node @types/react --save-dev
 ```
-4. Run command: **npm run dev**.
+4. Run command: 
+```
+npm run dev
+```
 
 ---------
 
