@@ -39,7 +39,7 @@ Each folder inside the above 2 folders serve as url path of the application. ind
 
 **Routing**: Nextjs provides Link component to give SPA like routing experience. If you use traditional anchor tag with href instead, then page will be reloaded everytime link is clicked. See index.tsx on how we wrap the anchor tag with Link tag. 
 
-**Dynamic Routing**: Create folders and/or file names starting and ending with square brackets. These are called slugs. You can also create multi-level slugs using dynamic folder that further contains dynamic file inside it. See fruits/[param1]/[param2] in the POC.
+**Dynamic Routing**: Create folders and/or file names starting and ending with square brackets. These are called slugs. You can also create multi-level slugs using dynamic folder that further contains dynamic file inside it. See fruits/[param1]/[param2] in the POC. Nextjs provides Router component which can be used to fetch the values of the slugs being passed in.
 
 For above conepts, see urls below:
 
