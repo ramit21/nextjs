@@ -43,6 +43,13 @@ Each folder inside the above 2 folders serve as url path of the application. ind
 
 You can make custom 404 error page using a custom react component named 404.tsx
 
+**GetStaticProps, revalidate parameter, GetStaticPaths**
+
+GetStaticProps method is invoked on the server before the JSX gets rendered. Good place to call API, DB or file read operations. Basically at build time, the html generated at the server side is cached on the disk, so that subsequent calls to the page can be rendered from the cache. In case you want to re-create the page every X seconds, then use the revalidate parameter. Nextjs will then try (not 100%) to recreate the page after X seconds.
+
+With dynamic pages, GetStaticProps should be used with GetStaticPaths functions, which tells what all param values are allowed for the slugs. This is important otherwise dynamic url hits would create lot of objects in the cache. For this, the fallback parameter should be set to false. If it is set to true, then the slug can have any value.
+
+
 For above conepts, see urls below:
 
 ```
@@ -68,18 +75,23 @@ fetch('http://localhost:3000/api/hello', {
     })
 })
 
-Nested Route being served from the index.tsx of its corresponding folder:
+404 being rendered by our custom page:
+http://localhost:3000/blah
+
+**Nested Routes**
+
+Nested Route being served from the base index.tsx of its corresponding folder:
 http://localhost:3000/fruit
 
-Dynamic routes with multi level params (abc and xyz can be any values):
+Dynamic slugs:
+Only abc and def are allowed values. Set fallback parameter as true to allow all param values:  
 http://localhost:3000/fruit/abc
-http://localhost:3000/fruit/abc/xyz 
+http://localhost:3000/fruit/abc/xyz -> uses router to display param values
 
 Unmatched dynamic slug being handled by a catch-all react component:
 http://localhost:3000/fruit/abc/xyz/x
 
-404 being rendered by our custom page:
-http://localhost:3000/blah
+
 
 
 

@@ -1,7 +1,7 @@
 export default function Home() {
     return (
       <div>
-       Fruit route's index.tsx
+       Another HTML page rendered via functional component
       </div>
     )
   }

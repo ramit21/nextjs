@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router'
 
-export default function slug2() {
-    const router = useRouter();
-    
+export default function slug2(props) {
+    const router = useRouter(); 
     return (
       <div>
         <h1>index.tsx for the second slug</h1>
