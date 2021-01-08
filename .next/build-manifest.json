@@ -19,11 +19,6 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/index.js"
     ],
-    "/404": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/404.js"
-    ],
     "/_app": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
@@ -34,25 +29,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/anotherPage": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/anotherPage.js"
-    ],
     "/fruit": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/fruit.js"
-    ],
-    "/fruit/[param1]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/fruit/[param1].js"
-    ],
-    "/fruit/[param1]/[param2]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/fruit/[param1]/[param2].js"
     ]
   },
   "ampFirstPages": []

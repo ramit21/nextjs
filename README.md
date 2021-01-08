@@ -91,9 +91,8 @@ http://localhost:3000/fruit/abc/xyz -> uses router to display param values
 Unmatched dynamic slug being handled by a catch-all react component:
 http://localhost:3000/fruit/abc/xyz/x
 
-
-
-
-
 ```
+
+## References
+https://www.youtube.com/watch?v=tt3PUvhOVzo
 
