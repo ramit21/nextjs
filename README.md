@@ -2,7 +2,7 @@
 
 POC - next js basics
 
-Nextjs is a wrapper around reactjs that enables react code to be rendered on server.
+Nextjs is a wrapper around reactjs that enables react code to be rendered on server. It returns HTML response to the browser whereas react sends bundles for the browser to render.
 
 To run this POC, run npm install, and resume from step 4 below (skipping steps 1-3).
 
